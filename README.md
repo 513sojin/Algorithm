@@ -1,2 +1,2 @@
-# Algo-Zandie-Sojin
-이소진 코딩 테스트 준비하는 레포
+# Algorithm
+알고리즘 고수가 되기 위한 여정
