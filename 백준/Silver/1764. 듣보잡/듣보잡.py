@@ -1,16 +1,16 @@
 n, m = map(int, input().split())
-names = {}
+arr_n = set()
+arr_m = set()
 
-for _ in range(n+m):
-    name = input()
-    if name in names:
-        names[name] += 1
-    else:
-        names[name] = 1
+for _ in range(n):
+    arr_n.add(input())
 
-result = list(filter(lambda x: names[x] > 1, names))
+for _ in range(m):
+    arr_m.add(input())
+
+result = list(arr_n.intersection(arr_m))
+result.sort()
 
 print(len(result))
-result.sort()
 for name in result:
     print(name)
