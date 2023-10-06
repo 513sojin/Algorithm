@@ -3,6 +3,7 @@ def bfs(start, end, graph, w, h):
     visited = [[0]* w for _ in range(h)]
     
     queue = deque([(start[0], start[1], 0)])
+    visited[start[0]][start[1]] = 1
     
     dy = [-1,1,0,0]
     dx = [0,0,-1,1]
