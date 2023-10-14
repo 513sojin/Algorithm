@@ -1,21 +1,11 @@
-text = input()
-dict = {}
+text = input().upper()
+set_text = list(set(text))
+result = []
 
-for t in text:
-    if t.upper() in dict:
-        dict[t.upper()] += 1
-    else:
-        dict[t.upper()] = 1
+for t in set_text:
+    result.append(text.count(t))
 
-sorted_dict = sorted(dict.items(), key= lambda x:x[1], reverse= True)
-max_value = max(sorted_dict, key= lambda x:x[1])
-
-count = 0
-for key, value in sorted_dict:
-    if value == max_value[1]:
-        count += 1
-
-if count > 1:
+if result.count(max(result)) > 1:
     print("?")
 else:
-    print(max_value[0])
+    print(set_text[result.index(max(result))])
