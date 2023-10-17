@@ -1,10 +1,10 @@
 # [level 1] 문자열 나누기 - 140108 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/140108?language=python3) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/140108?language=cpp) 
 
 ### 성능 요약
 
-메모리: 26.2 MB, 시간: 15.42 ms
+메모리: 18.1 MB, 시간: 11.92 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2023년 10월 2일 15:20:27
+2023년 10월 2일 16:2:5
 
 ### 문제 설명
 
