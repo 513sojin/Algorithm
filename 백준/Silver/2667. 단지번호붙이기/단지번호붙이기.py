@@ -1,48 +1,46 @@
 import sys
 from collections import deque
-
 input = sys.stdin.readline
 
 n = int(input())
 graph = [list(map(int, input().strip())) for _ in range(n)]
 
-
+visited = [[0]*n for _ in range(n)]
+result = 0
 ans = []
-visited = [[0] * n for _ in range(n)]
-dx = [0, 0, -1, 1]
-dy = [1, -1, 0, 0]
 
-total = 0
+dx = [1,-1,0,0]
+dy = [0,0,-1,1]
 
-def bfs(y, x):
+
+def bfs(i, j):
+    graph[i][j] = 0
+
     queue = deque()
-    queue.append((y, x))
-    visited[y][x] = 1
-    count = 1
+    queue.append((i, j))
+    cnt = 1
 
     while queue:
         y, x = queue.popleft()
 
         for i in range(4):
-            ny = dy[i] + y
             nx = dx[i] + x
+            ny = dy[i] + y
 
             if 0 <= ny < n and 0 <= nx < n:
-                if not visited[ny][nx] and graph[ny][nx] == 1:
+                if graph[ny][nx] == 1:
+                    graph[ny][nx] = 0
                     queue.append((ny, nx))
-                    count += 1
-                    visited[ny][nx] = 1
+                    cnt += 1
+    return cnt
 
-    return count
+for i in range(n):
+    for j in range(n):
+        if graph[i][j] == 1:
+            ans.append(bfs(i,j))
+            result += 1
 
-
-for y in range(n):
-    for x in range(n):
-        if not visited[y][x] and graph[y][x] == 1:
-            ans.append(bfs(y, x))
-            total += 1
-
+print(result)
 ans.sort()
-ans = [total] + ans
 for a in ans:
     print(a)
